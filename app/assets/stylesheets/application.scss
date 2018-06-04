@@ -1,1 +1,7 @@
-@import "./reset";
+@import "config/reset";
+@import "config/colors";
+@import "mixins/clearfix";
+@import "messages/messages.scss";
+@import "modules/side_bar.scss";
+@import "font-awesome";
+

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  '/messages/index' => 'messages#index'
+  resources :messages, only: [:index]
 end

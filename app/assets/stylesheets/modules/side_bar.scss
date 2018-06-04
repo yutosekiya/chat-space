@@ -1,0 +1,46 @@
+.side-content {
+  width: 300px;
+  height: 120px;
+  background-color: $left-top;
+  float: left;
+  border-bottom:1px solid $border-line;
+}
+.side-header{
+  height: 120px;
+  color: white;
+  padding-left: 20px;
+  font-size:16px;
+  border:1px $gray;
+    &__name{
+      float: left;
+      line-height: 120px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    &__icon {
+      float: right;
+      line-height: 120px;
+      margin-right: 10px;
+    }
+    &__edit {
+      float: right;
+      line-height: 120px;
+      margin-right: 20px;
+    }
+}
+.side-body {
+  height: calc(100vh - 120px);
+  background-color: $left-body ;
+  color: $white;
+  padding-left: 20px;
+
+    &__group {
+      font-size: 15px;
+      padding-top: 20px;
+    }
+    &__message {
+      padding-top:5px;
+      font-size: 11px;
+      margin-bottom: 20px;
+      }
+}
