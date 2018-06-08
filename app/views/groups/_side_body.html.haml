@@ -1,0 +1,8 @@
+.side-body
+  - current_user.groups.each  do |group|
+    = link_to group_messages_path(group) do
+      .side-body__group
+        = group.name
+
+    .side-body__message
+      メッセージはまだありません。
