@@ -33,20 +33,26 @@
   color: white;
 }
 
+.link-side{
+  text-decoration: none;
+}
 
 .side-body {
   height: calc(100vh - 120px);
   background-color: $left-body ;
-  color: $white;
   padding-left: 20px;
+  text-decoration: none;
 
     &__group {
       font-size: 15px;
       padding-top: 20px;
+      color: $white;
+
     }
     &__message {
       padding-top:5px;
       font-size: 11px;
       margin-bottom: 20px;
+      color: $white;
     }
 }
