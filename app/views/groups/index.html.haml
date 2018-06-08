@@ -1,27 +1,2 @@
 .wrapper
   = render 'side_bar'
-  .main-content
-    .main-top
-      .main-top__left
-        .main-top__group  Group1
-        .main-top__member MEMBER : yuto
-      .main-top__right
-        .main-top__edit   Edit
-    .main-body
-      .main-body__text
-        .main-body__name yuto
-        .main-body__time 2016/12/21
-        .main-body__message aaa
-        .main-body__name yuto
-        .main-body__time 2016/12/21
-        .main-body__message aaa
-    .form
-      %form
-        .form-outline
-          %input.form__message{value: "type a message"}
-            .form-image
-              %label.form__add__image
-                = fa_icon 'picture-o', class: 'icon'
-                %input.hidden{type: 'file'}
-        .form-submit
-          %input.form__submit{type: 'submit', value: 'Send'}
