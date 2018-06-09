@@ -62,9 +62,12 @@
 }
 .form {
   background-color: #DDDDDD;
+  width: 100%;
   box-sizing: border-box;
   height: 90px;
   padding: 20px 50px 20px 40px;
+  position: absolute;
+  bottom:0;
   &__message {
     border: none;
     float: left;
@@ -79,6 +82,9 @@
     &__image {
       font-size: 20px;
       line-height: 50px;
+    }
+    .icon {
+      color: black;
     }
     .hidden {
       display: none;
