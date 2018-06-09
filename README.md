@@ -39,7 +39,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|image|string|null: false|s
+|image|string|null: false|
 |user_id|reference|null: false ,foreign_key: true|
 |group_id|reference|null: false ,foreign_key: true|
 

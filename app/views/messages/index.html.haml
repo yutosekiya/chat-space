@@ -1,5 +1,5 @@
 .wrapper
-  = render 'side_bar'
+  = render 'shared/side_bar'
   .main-content
     .main-top
       .main-top__left
@@ -8,20 +8,13 @@
       .main-top__right
         .main-top__edit   Edit
     .main-body
-      .main-body__text
-        .main-body__name yuto
-        .main-body__time 2016/12/21
-        .main-body__message aaa
-        .main-body__name yuto
-        .main-body__time 2016/12/21
-        .main-body__message aaa
+      = render @messages
     .form
-      %form
-        .form-outline
-          %input.form__message{value: "type a message"}
-            .form-image
-              %label.form__add__image
-                = fa_icon 'picture-o', class: 'icon'
-                %input.hidden{type: 'file'}
-        .form-submit
-          %input.form__submit{type: 'submit', value: 'Send'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
