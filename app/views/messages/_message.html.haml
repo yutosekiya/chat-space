@@ -1,0 +1,11 @@
+.main-body__text
+  .main-body__name
+    = message.user.name
+  .main-body__time
+    = message.created_at
+  .main-body__message
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
