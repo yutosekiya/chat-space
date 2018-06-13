@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :messages
 
-  mount_uploader :image, ImagesUploader
+  mount_uploader :image, ImageUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
