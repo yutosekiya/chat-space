@@ -37,8 +37,10 @@
     }
 }
 .main-body {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 210px);
   background-color: $gray;
+  overflow: auto;
+
     &__text {
     padding-left: 40px;
     padding-top: 46px;
