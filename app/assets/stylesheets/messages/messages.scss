@@ -37,6 +37,7 @@
     }
 }
 .main-body {
+  overflow: auto;
   height: calc(100vh - 210px);
   background-color: $gray;
   overflow: auto;
