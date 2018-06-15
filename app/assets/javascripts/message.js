@@ -23,6 +23,10 @@ $(function(){
     return html;
   }
 
+  function scroll(){
+    $('.main-body').animate({scrollTop: $('.main-body')[0].scrollHeight},'fast');
+  };
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -39,10 +43,10 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main-body').append(html);
-      $('.main-body').animate({scrollTop: $('.main-body')[0].scrollHeight},'fast');
       $('.form__submit').prop("disabled", false);
       $('.form__message').val('');
       $('#new_message')[0].reset();
+      scroll();
     })
     .fail(function(){
       alert('error');
