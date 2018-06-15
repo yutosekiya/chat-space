@@ -1,5 +1,5 @@
 module ApplicationHelper
   def format_posted_time(time)
-    time.to_s(:default)
+    time.strftime("%Y-%m-%d %H:%M ")
   end
 end
