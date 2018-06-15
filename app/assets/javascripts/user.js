@@ -25,8 +25,6 @@ $(function(){
     $('#chat-group-user').append(html)
   }
 
-
-
   $('#user-search-field').on("keyup", function(){
     var input = $('#user-search-field').val();
     $.ajax({
@@ -35,7 +33,6 @@ $(function(){
       data: { keyword: input },
       dataType: 'json',
     })
-
     .done(function(users) {
       $('#user-search-result').empty();
       if (users.length !== 0 ) {
