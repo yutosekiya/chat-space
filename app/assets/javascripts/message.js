@@ -42,7 +42,7 @@ $(function(){
       $('.main-body').animate({scrollTop: $('.main-body')[0].scrollHeight},'fast');
       $('.form__submit').prop("disabled", false);
       $('.form__message').val('');
-      $('.hidden').val('');
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert('error');
