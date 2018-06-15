@@ -5,9 +5,12 @@
       .main-top__left
         .main-top__group
           = @group.name
-        .main-top__member nini
+        .main-top__member
+          - @group.users.each do |user|
+            =user.name
       .main-top__right
-        .main-top__edit   Edit
+        .main-top__edit
+          = link_to "Edit", edit_group_path(@group)
     .main-body
       = render @messages
     .form
