@@ -44,7 +44,6 @@ $(function(){
       var html = buildHTML(data);
       $('.main-body').append(html);
       $('.form__submit').prop("disabled", false);
-      $('.form__message').val('');
       $('#new_message')[0].reset();
       scroll();
     })
