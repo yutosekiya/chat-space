@@ -31,14 +31,15 @@ $(function(){
   function update(){
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var url = location.href
+      var last_id = $('.main-body__text').last().data('message-id')
       $.ajax({
         url: url,
         type: 'GET',
         dataType: 'json',
+        data: {id: last_id}
       })
       .done(function(json){
         var newhtml = ''
-        var last_id = $('.main-body__text').last().data('message-id')
           json.messages.forEach(function(message){
             if( message.id > last_id){
               newhtml += buildHTML(message)
