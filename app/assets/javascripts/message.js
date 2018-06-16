@@ -1,10 +1,11 @@
 $(function(){
   function buildHTML(message){
-    if(message.image != null){
-       var image  = `<img src ="${message.image}" >`;
-     }else{
-       var image = '';
-     }
+    var image = (
+        (message.image != null)
+      ? (`<img src ="${message.image}" >`)
+      : ('')
+    );
+
     var html =`<div class= "main-body__text", data-message-id = "${message.id}">
                   <div class = "main-body__name">
                     ${message.name}
