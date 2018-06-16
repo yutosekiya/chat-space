@@ -27,6 +27,31 @@ $(function(){
     $('.main-body').animate({scrollTop: $('.main-body')[0].scrollHeight},'fast');
   };
 
+  function update(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var url = location.href
+      $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+      })
+      .done(function(json){
+        var newhtml = ''
+        var last_id = $('.main-body__text').last().data('message-id')
+          json.messages.forEach(function(message){
+            if( message.id > last_id){
+              newhtml += buildHTML(message)
+            }
+          })
+        $('.main-body').append(newhtml);
+        scroll();
+      })
+      .fail(function(data){
+        alert('自動更新に失敗しました')
+      });
+    }
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -53,30 +78,5 @@ $(function(){
   })
 
   setInterval(update, 5000)
-
-  function update(){
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      var url = location.href
-      $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'json',
-      })
-      .done(function(json){
-        var newhtml = ''
-        var last_id = $('.main-body__text').last().data('message-id')
-          json.messages.forEach(function(message){
-            if( message.id > last_id){
-              newhtml += buildHTML(message)
-            }
-          })
-        $('.main-body').append(newhtml);
-        scroll();
-      })
-      .fail(function(data){
-        alert('自動更新に失敗しました')
-      });
-    }
-  }
 })
 
